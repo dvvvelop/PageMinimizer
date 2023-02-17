@@ -1,4 +1,4 @@
-package org.example;
+package com.example.webpageminimizer.processors;
 
 public interface PageMinimizer {
 

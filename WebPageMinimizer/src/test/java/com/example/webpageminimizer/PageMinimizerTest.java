@@ -1,9 +1,19 @@
-import org.example.PageMinimizer;
+package com.example.webpageminimizer;
 
-import static org.junit.jupiter.api.Assertions.*;
+
+import com.example.webpageminimizer.processors.PageMinimizer;
+import com.example.webpageminimizer.processors.PageMinimizerImplementation;
+import org.junit.jupiter.api.BeforeAll;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PageMinimizerTest {
-    PageMinimizer pageMinimizer;
+   static PageMinimizer pageMinimizer;
+    @BeforeAll
+    static void init () {
+        pageMinimizer = new PageMinimizerImplementation();
+    }
 
     @org.junit.jupiter.api.Test
     void comma() {
@@ -43,7 +53,7 @@ class PageMinimizerTest {
 
         try {
             pageMinimizer.string1tostring2("абв");
-        } catch (java.lang.NumberFormatException e) {
+        } catch (NumberFormatException e) {
             thrown = true;
         }
 
@@ -55,7 +65,7 @@ class PageMinimizerTest {
 
         try {
             pageMinimizer.string1tostring2("1.4");
-        } catch (java.lang.NumberFormatException e) {
+        } catch (NumberFormatException e) {
             thrown = true;
         }
 
@@ -68,7 +78,7 @@ class PageMinimizerTest {
 
         try {
             pageMinimizer.string1tostring2("");
-        } catch (java.lang.NumberFormatException e) {
+        } catch (NumberFormatException e) {
             thrown = true;
         }
 

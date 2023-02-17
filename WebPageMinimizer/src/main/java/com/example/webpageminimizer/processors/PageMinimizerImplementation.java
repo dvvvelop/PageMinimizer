@@ -1,19 +1,21 @@
-package org.example;
+package com.example.webpageminimizer.processors;
+
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
+@Component
 public class PageMinimizerImplementation implements PageMinimizer {
 
     @Override
     public String string1tostring2(String n1) {
 
 
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
 
         // Read a string of numbers from the console
-        System.out.print("Enter a string of numbers: ");
-        String numberString = scanner.nextLine();
+
+        String numberString = n1;
 
         // Convert the string to an array of integers
         String[] numberStrings = numberString.split("\\s*,\\s*");
@@ -49,7 +51,7 @@ public class PageMinimizerImplementation implements PageMinimizer {
             result = result.substring(0, result.length() - 1);
         }
         System.out.println(result);
-        return "";
+        return result;
     }
         }
 
