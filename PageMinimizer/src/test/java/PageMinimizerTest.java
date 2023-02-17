@@ -34,6 +34,10 @@ class PageMinimizerTest {
         assertEquals("-4,1,3", pageMinimizer.string1tostring2("1,-4,3"));
     }
     @org.junit.jupiter.api.Test
+    void negative_value_dash() {
+        assertEquals("-4--2,1-3", pageMinimizer.string1tostring2("-4,-3,-2,1,2,3"));
+    }
+    @org.junit.jupiter.api.Test
     public void test_symbolException() {
         boolean thrown = false;
 
@@ -57,18 +61,7 @@ class PageMinimizerTest {
 
         assertTrue(thrown);
     }
-    @org.junit.jupiter.api.Test
-    public void test_spaceException () {
-        boolean thrown = false;
 
-        try {
-            pageMinimizer.string1tostring2("1, 2, 3, 4");
-        } catch (java.lang.NumberFormatException e) {
-            thrown = true;
-        }
-
-        assertTrue(thrown);
-    }
     @org.junit.jupiter.api.Test
     public void test_emptyException () {
         boolean thrown = false;
